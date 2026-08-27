@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #3b5295;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* 3D Glass Block Tiles */
+.block-tile-3d {
+  position: relative;
+  box-shadow: 
+    inset 2.5px 2.5px 0px rgba(255, 255, 255, 0.45),
+    inset -2.5px -2.5px 0px rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Glassmorphic Sidebars & Cards */
+.sidebar-panel {
+  background: rgba(10, 12, 28, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-panel {
+  background: rgba(13, 16, 37, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Active Sidebar Navigation Item */
+.sidebar-nav-active {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(168, 85, 247, 0.1) 100%);
+  border-left: 3px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+/* Radial ambient glow accents */
+.theme-default .glow-accent {
+  background-color: rgba(79, 70, 229, 0.15);
+}
+.theme-neon .glow-accent {
+  background-color: rgba(6, 182, 212, 0.18);
+}
+.theme-galaxy .glow-accent {
+  background-color: rgba(236, 72, 153, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 5, 12, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.4);
+}
+
+/* Quick Animations */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float-gentle {
+  animation: float-gentle 8s ease-in-out infinite;
+}
